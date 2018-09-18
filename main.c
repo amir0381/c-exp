@@ -4,9 +4,13 @@
 
 char * cexpGen ();
 
+char *c_exp = "1";
+char expressions[2] = {'+', '-'};
+
 int main()
 {
     cexpGen();
+    printf("%s", c_exp);
     return 0;
 }
 
@@ -34,5 +38,4 @@ char * cexpGen () {
         strcat(c_exp, ( ( atoi(c_exp[ strlen(c_exp) - 1 ])) ) + 1 );
         }
     }
-
 }
