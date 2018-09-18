@@ -17,11 +17,11 @@ int main()
 char *cexpGen()
 {
     int now = 1;
-    while (atoi(c_exp[strlen(c_exp) - 1]) > 10)
+    while ((c_exp[strlen(c_exp) - 1]) > 10)
     {
-        if (atoi(c_exp[strlen(c_exp) - 1]) == '+' || atoi(c_exp[strlen(c_exp) - 1]) == '-')
+        if ((c_exp[strlen(c_exp) - 1]) == '+' || (c_exp[strlen(c_exp) - 1]) == '-')
         {
-            strcat(c_exp, ((atoi(c_exp[strlen(c_exp) - 2])) + 1));
+            strcat(c_exp, (((c_exp[strlen(c_exp) - 2])) + 1));
             continue;
         }
 
@@ -41,7 +41,7 @@ char *cexpGen()
 
         if (now = 3)
         {
-            strcat(c_exp, atoi(c_exp[strlen(c_exp) - 1]) + 1);
+            strcat(c_exp, (c_exp[strlen(c_exp) - 1]) + 1);
         }
     }
 }
