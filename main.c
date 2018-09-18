@@ -12,7 +12,7 @@ int main()
 
 char * cexpGen () {
     char *c_exp = "1";
-    char exps[2] = {'+', '-'};
+    char expressions[2] = {'+', '-'};
     int now = 1;
     while (atoi(c_exp[ strlen(c_exp) - 1 ]) > 10)
     {
@@ -21,12 +21,12 @@ char * cexpGen () {
             continue;
         }
         if (now = 1) {
-        strcat(c_exp, exps[1]);
+        strcat(c_exp, expressions[1]);
         now++;
         cexpGen();
         }
         if (now = 2) {
-        strcat(c_exp, exps[2]);
+        strcat(c_exp, expressions[2]);
         now++;
         cexpGen();
         }
