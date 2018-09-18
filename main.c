@@ -24,7 +24,7 @@ char *cexpGen()
     while (atoi(c_exp[ strlen(c_exp) - 1 ]) > 10)
     {
         if (atoi(c_exp[ strlen(c_exp) - 1 ]) == '+' || atoi(c_exp[ strlen(c_exp) - 1 ]) == '-') {
-            strcat(c_exp,((atoi(c_exp[ strlen(c_exp) - 2 ])) + 1 ));
+            strcat(c_exp,((atoi(c_exp[ strlen(c_exp) - 2 ])) + 1));
             continue;
         }
 
@@ -39,7 +39,7 @@ char *cexpGen()
         now++;
         cexpGen();
         }
-        
+
         if (now = 3) {
         strcat(c_exp, atoi(c_exp[ strlen(c_exp) - 1 ]) + 1 );
         }
