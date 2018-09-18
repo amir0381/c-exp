@@ -4,7 +4,7 @@
 
 char * cexpGen ();
 
-char *c_exp = "1";
+char c_exp[] = "1";
 char expressions[2] = {'+', '-'};
 
 int main()
@@ -15,8 +15,6 @@ int main()
 }
 
 char * cexpGen () {
-    char *c_exp = "1";
-    char expressions[2] = {'+', '-'};
     int now = 1;
     while (atoi(c_exp[ strlen(c_exp) - 1 ]) > 10)
     {
