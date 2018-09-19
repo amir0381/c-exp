@@ -5,7 +5,7 @@
 char *cexpGen();
 char *chartoStr(char c);
 
-char c_exp[] = "1";
+char c_exp[18] = "1";
 char expressions[2] = {'+', '-'};
 
 int main()
@@ -17,38 +17,43 @@ int main()
 
 char *cexpGen()
 {
+    size_t len = strlen(c_exp);
     int now = 1;
-    while ((c_exp[strlen(c_exp) - 1]) > 10)
+    while ((len = strlen(c_exp)) > 0 && c_exp[len - 1] > 10)
     {
+        if (c_exp[(strlen(c_exp) - 1)] == '9')
+        {
+            
+        }
         if ((c_exp[strlen(c_exp) - 1]) == '+' || (c_exp[strlen(c_exp) - 1]) == '-')
         {
-            strcat(c_exp[strlen(c_exp)], chartoStr(((c_exp[strlen(c_exp) - 2]) + 1)));
+            c_exp[len++] = ((c_exp[strlen(c_exp) - 2]) + 1);
+            c_exp[len] = '\0';
             continue;
         }
 
-        if (now = 1)
+        if (now == 1)
         {
-            strcat(c_exp[strlen(c_exp)], chartoStr(expressions[0]));
+            c_exp[len++] = expressions[0];
+            c_exp[len] = '\0';
             now++;
             cexpGen();
         }
 
-        if (now = 2)
+        if (now == 2)
         {
-            strcat(c_exp[strlen(c_exp)], chartoStr(expressions[1]));
+            c_exp[len++] = expressions[1];
+            c_exp[len] = '\0';
             now++;
             cexpGen();
         }
 
-        if (now = 3)
+        if (now == 3)
         {
-            strcat(c_exp[strlen(c_exp)], chartoStr(((c_exp[strlen(c_exp) - 1]) + 1)));
+            c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1);
+            c_exp[len] = '\0';
+            now = 1;
+            cexpGen();
         }
     }
-}
-
-char *chartoStr(char c)
-{
-    char s[2] = {c, '\0'};
-    return s;
 }
