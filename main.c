@@ -8,6 +8,7 @@ void cexpGen();
 char c_exp[18] = "1";
 char expressions[2] = {'+', '-'};
 int now;
+size_t len;
 
 int main()
 {
@@ -18,10 +19,10 @@ int main()
 
 void cexpGen()
 {
-    size_t len = strlen(c_exp);
+    len = strlen(c_exp);
     for (now = 0; now < 3; now++)
     {
-        if (now == 1)
+        if (now == 0)
         {
             c_exp[len++] = expressions[0];
             c_exp[len] = '\0';
@@ -44,7 +45,7 @@ void cexpGen()
             cexpGen();
         }
 
-        if (now == 2)
+        if (now == 1)
         {
             c_exp[len++] = expressions[1];
             c_exp[len] = '\0';
@@ -67,7 +68,7 @@ void cexpGen()
             cexpGen();
         }
 
-        if (now == 3)
+        if (now == 2)
         {
             c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1);
             c_exp[len] = '\0';
