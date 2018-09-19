@@ -3,7 +3,7 @@
 #include <string.h>
 #include "lib/tinyexpr.h"
 
-char *cexpGen();
+void cexpGen();
 
 char c_exp[18] = "1";
 char expressions[2] = {'+', '-'};
@@ -15,7 +15,7 @@ int main()
     return 0;
 }
 
-char *cexpGen()
+void cexpGen()
 {
     size_t len = strlen(c_exp);
     int now = 1;
