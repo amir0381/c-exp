@@ -7,7 +7,7 @@ void cexpGen();
 
 char c_exp[18] = "1";
 char expressions[2] = {'+', '-'};
-int now = 1;
+int now
 
 int main()
 {
@@ -19,7 +19,7 @@ int main()
 void cexpGen()
 {
     size_t len = strlen(c_exp);
-    while ((len = strlen(c_exp)) > 0 && c_exp[len - 1] > 10)
+    for (now = 0; now < 3; now++)
     {
         if (now == 1)
         {
@@ -36,7 +36,7 @@ void cexpGen()
                 if (te_interp(c_exp, 0) == 100)
                 {
                     int i = 1;
-                    printf("%c   %s", i, c_exp);
+                    printf("%c   %s\n", i, c_exp);
                     i++;
                 }
             }
@@ -66,8 +66,11 @@ void cexpGen()
 
             cexpGen();
         }
-
-        now = 1;
-        cexpGen();
+        
+        if (now == 3)
+        {
+             c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1) ;
+             c_exp[len] = '\0';
+        }
     }
 }
