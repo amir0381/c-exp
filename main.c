@@ -7,7 +7,7 @@ void cexpGen();
 
 char c_exp[18] = "1";
 char expressions[2] = {'+', '-'};
-int now
+int now;
 
 int main()
 {
@@ -66,12 +66,12 @@ void cexpGen()
 
             cexpGen();
         }
-        
+
         if (now == 3)
         {
-             c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1) ;
-             c_exp[len] = '\0';
-            
+            c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1);
+            c_exp[len] = '\0';
+
             if (c_exp[(strlen(c_exp) - 1)] == '9')
             {
                 if (te_interp(c_exp, 0) == 100)
@@ -81,6 +81,8 @@ void cexpGen()
                     i++;
                 }
             }
+
+            cexpGen();
         }
     }
 }
