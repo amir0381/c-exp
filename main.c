@@ -31,6 +31,16 @@ void cexpGen()
 
             now++;
 
+            if (c_exp[(strlen(c_exp) - 1)] == '9')
+            {
+                if (te_interp(c_exp, 0) == 100)
+                {
+                    int i = 1;
+                    printf("%c   %s", i, c_exp);
+                    i++;
+                }
+            }
+
             cexpGen();
         }
 
@@ -43,13 +53,6 @@ void cexpGen()
             c_exp[len] = '\0';
 
             now++;
-            cexpGen();
-        }
-
-        if (now == 3)
-        {
-            c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1);
-            c_exp[len] = '\0';
 
             if (c_exp[(strlen(c_exp) - 1)] == '9')
             {
@@ -60,7 +63,10 @@ void cexpGen()
                     i++;
                 }
             }
+
+            cexpGen();
         }
+
         now = 1;
         cexpGen();
     }
