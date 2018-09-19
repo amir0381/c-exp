@@ -22,13 +22,6 @@ char *cexpGen()
     int now = 1;
     while ((len = strlen(c_exp)) > 0 && c_exp[len - 1] > 10)
     {
-        /* if ((c_exp[strlen(c_exp) - 1]) == '+' || (c_exp[strlen(c_exp) - 1]) == '-')
-        {
-            c_exp[len++] = ((c_exp[strlen(c_exp) - 2]) + 1);
-            c_exp[len] = '\0';
-            continue;
-        } */
-
         if (now == 1)
         {
             c_exp[len++] = expressions[0];
@@ -39,15 +32,6 @@ char *cexpGen()
 
             now++;
 
-            /* if (c_exp[(strlen(c_exp) - 1)] == '9')
-            {
-                if (te_interp(c_exp, 1) == 100)
-                {
-                    int i = 1;
-                    printf("%c   %s", i, c_exp);
-                    i++;
-                }
-            } */
             cexpGen();
         }
 
