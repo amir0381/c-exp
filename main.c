@@ -4,7 +4,6 @@
 #include "tinyexpr.h"
 
 char *cexpGen();
-char *chartoStr(char c);
 
 char c_exp[18] = "1";
 char expressions[2] = {'+', '-'};
