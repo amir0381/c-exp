@@ -7,7 +7,7 @@ void cexpGen();
 
 char c_exp[18] = "1";
 char expressions[2] = {'+', '-'};
-int now;
+int now = 0;
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
 
 void cexpGen()
 {
-    for (now = 0; now < 3; now++)
+    for (; now < 3; now++)
     {
         if (now == 0)
         {
