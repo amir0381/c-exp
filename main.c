@@ -60,9 +60,8 @@ void cexpGen()
                     i++;
                 }
             }
-
-            now = 1;
-            cexpGen();
         }
+        now = 1;
+        cexpGen();
     }
 }
