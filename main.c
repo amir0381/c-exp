@@ -71,6 +71,16 @@ void cexpGen()
         {
              c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1) ;
              c_exp[len] = '\0';
+            
+            if (c_exp[(strlen(c_exp) - 1)] == '9')
+            {
+                if (te_interp(c_exp, 0) == 100)
+                {
+                    int i = 1;
+                    printf("%c   %s\n", i, c_exp);
+                    i++;
+                }
+            }
         }
     }
 }
