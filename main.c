@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <tinyexpr.h>
+#include "tinyexpr.h"
 
 char *cexpGen();
 char *chartoStr(char c);
@@ -54,7 +54,7 @@ char *cexpGen()
 
             if (c_exp[(strlen(c_exp) - 1)] == '9')
             {
-                if (te_interp(c_exp, 1) == 100)
+                if (te_interp(c_exp, 0) == 100)
                 {
                     int i = 1;
                     printf("%c   %s", i, c_exp);
