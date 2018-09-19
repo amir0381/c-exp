@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tinyexpr.h"
+#include "lib/tinyexpr.h"
 
 char *cexpGen();
 
