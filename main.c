@@ -25,10 +25,10 @@ void cexpGen()
         if (now == 0)
         {
             c_exp[len++] = expressions[0];
-            c_exp[len++] = '\0';
+            c_exp[len] = '\0';
 
             c_exp[len++] = ((c_exp[strlen(c_exp) - 2]) + 1);
-            c_exp[len++] = '\0';
+            c_exp[len] = '\0';
 
             now++;
 
@@ -54,10 +54,10 @@ void cexpGen()
         if (now == 1)
         {
             c_exp[len++] = expressions[1];
-            c_exp[len++] = '\0';
+            c_exp[len] = '\0';
 
             c_exp[len++] = ((c_exp[strlen(c_exp) - 2]) + 1);
-            c_exp[len++] = '\0';
+            c_exp[len] = '\0';
 
             now++;
 
@@ -75,13 +75,13 @@ void cexpGen()
 
             cexpGen();
 
-            c_exp = &c_exptmp;
+            c_exp = c_exptmp;
         }
 
         if (now == 2)
         {
             c_exp[len++] = ((c_exp[strlen(c_exp) - 1]) + 1);
-            c_exp[len++] = '\0';
+            c_exp[len] = '\0';
 
             if (c_exp[(strlen(c_exp) - 1)] == '9')
             {
