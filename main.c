@@ -6,8 +6,10 @@
 void cexpGen();
 
 char c_exp[18] = "1";
+char c_exptmp[];
 char expressions[3] = {'+', '-'};
 int now = 0;
+int i = 0;
 
 int main()
 {
@@ -44,11 +46,21 @@ void cexpGen()
                 continue;
             }
 
-            char c_exptmp[] = c_exp;
+            while (c_exp[i] != NULL)
+            {
+                c_exptmp[i] = c_exp[i];
+                i++;
+            }
+            i = 0;
 
             cexpGen();
 
-            c_exp = c_exptmp;
+            while (c_exp[i] != NULL)
+            {
+                c_exp[i] = c_exptmp[i];
+                i++;
+            }
+            i = 0;
         }
 
         if (now == 1)
@@ -71,11 +83,19 @@ void cexpGen()
                 }
             }
 
-            char c_exptmp[] = c_exp;
+            while (c_exp[i] != NULL)
+            {
+                c_exptmp[i] = c_exp[i];
+            }
 
             cexpGen();
 
-            c_exp = c_exptmp;
+            while (c_exp[i] != NULL)
+            {
+                c_exp[i] = c_exptmp[i];
+                i++;
+            }
+            i = 0;
         }
 
         if (now == 2)
@@ -93,11 +113,19 @@ void cexpGen()
                 }
             }
 
-            char c_exptmp[] = c_exp;
+            while (c_exp[i] != NULL)
+            {
+                c_exptmp[i] = c_exp[i];
+            }
 
             cexpGen();
 
-            c_exp = c_exptmp;
+            while (c_exp[i] != NULL)
+            {
+                c_exp[i] = c_exptmp[i];
+                i++;
+            }
+            i = 0;
         }
     }
 }
